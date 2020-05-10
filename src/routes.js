@@ -2,8 +2,9 @@ const express = require('express');
 
 const routes = express.Router();
 
-routes.get('/', (require, response) => {
-    return response.send("hello");
-});
+const studentController = require('./controllers/addStudent');
+
+routes.post('/', studentController.addStudent);
+routes.get('/view', studentController.viewAllStudents);
 
 module.exports = routes;
