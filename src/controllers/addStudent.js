@@ -12,8 +12,8 @@ module.exports = {
     },
     async viewAllStudents(req, res) {
         const response = await connection('aluno')
-                    .select('id', 'name');
+                    .select('*');
 
-        return res.json(response.data);
+        return res.json(response);
     }
 };
